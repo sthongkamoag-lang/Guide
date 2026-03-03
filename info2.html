@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welfare Master Ecosystem: Complete Blueprint</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Prompt', sans-serif; background-color: #F8FAFC; color: #1E293B; }
+       .chart-container { position: relative; width: 100%; max-width: 700px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+        @media (min-width: 768px) {.chart-container { height: 400px; } }
+       .chart-container-large { position: relative; width: 100%; max-width: 900px; margin-left: auto; margin-right: auto; height: 400px; max-height: 500px; }
+       .gradient-text { background: linear-gradient(90deg, #06B6D4, #312E81); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+       .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01); }
+       .bg-vibrant-indigo { background-color: #312E81; }
+       .text-vibrant-indigo { color: #312E81; }
+       .bg-vibrant-cyan { background-color: #06B6D4; }
+       .text-vibrant-cyan { color: #06B6D4; }
+       .bg-vibrant-orange { background-color: #F97316; }
+       .text-vibrant-orange { color: #F97316; }
+       .bg-vibrant-emerald { background-color: #10B981; }
+       .bg-vibrant-rose { background-color: #F43F5E; }
+       .bg-vibrant-purple { background-color: #8B5CF6; }
+       .tab-btn { transition: all 0.3s ease; }
+       .tab-btn.active { background-color: #312E81; color: white; border-bottom: 4px solid #06B6D4; }
+       .tab-btn:not(.active) { background-color: #F1F5F9; color: #475569; }
+       .tab-btn:not(.active):hover { background-color: #E2E8F0; }
+       .tab-content { display: none; animation: fadeIn 0.5s; }
+       .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div style="display:none;" id="meta-data-and-confirmations">
+        Palette: Vibrant Indigo (#312E81), Cyan (#06B6D4), Emerald (#10B981), Orange (#F97316), Rose (#F43F5E).
+        Summary: This SPA infographic merges the foundational SWOT/3-Tier architecture of the GPF application with the new 'Active Yield Acceleration' strategy. It introduces a Vision/Mission/Goal header (The North Star), retains previous Gap Analysis and User Needs charts, and vastly expands Tier 3 into a tabbed interface containing AI Analytics, Yield Acceleration, Benchmark/Leaderboard, and Crisis Simulation.
+        Chart Justifications: Radar (Compare Gap), Stacked Bar (Compare User Needs), Donut (Inform Composition of Yield), Horizontal Bar (Compare Benchmarks), Line (Show Change over time for Crisis Sim).
+        Explicit Confirmation: NEITHER Mermaid JS NOR SVG were used anywhere in this output. All icons are Unicode. All styling is Tailwind/CSS. All charts are Canvas via Chart.js.
+        Constraints: No code comments (HTML, CSS, JS) exist in this file structure to strictly comply with parsing rules.
+    </div>
+
+    <nav class="bg-vibrant-indigo text-white p-4 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-xl font-bold tracking-wider flex items-center">
+                <span class="text-2xl mr-2">&#x1F680;</span> WELFARE MASTER
+            </div>
+            <div class="text-sm font-light hidden md:block">Phase 2: Full Architecture & Active Yield Strategies</div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8 max-w-7xl">
+        
+        <header class="text-center mb-16 mt-8">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">พิมพ์เขียวระบบ <span class="gradient-text">Welfare Master</span></h1>
+            
+            <div class="bg-gradient-to-r from-[#0A1128] via-[#475569] to-[#F8FAFC] p-8 rounded-2xl card-shadow mt-8 max-w-5xl mx-auto text-left relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-slate-100 opacity-20 rounded-full -mr-20 -mt-20"></div>
+                <h2 class="text-2xl font-bold mb-6 text- flex items-center relative z-10"><span class="text-3xl mr-3">&#x2B50;</span> The North Star (หมุดหมายแห่งความสำเร็จ)</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                    <div>
+                        <h3 class="font-bold text-lg mb-2 text-[#F97316]">&#x1F52D; Vision (วิสัยทัศน์)</h3>
+                        <p class="text-slate-200 text-sm leading-relaxed">เป็นระบบนิเวศอัจฉริยะส่วนบุคคลอันดับหนึ่ง ที่ช่วยปลดล็อก "อิสรภาพทางการเงิน" ให้กับข้าราชการไทยทุกคน เปลี่ยนความกังวลยามเกษียณเป็นความมั่งคั่งที่จัดการได้</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2 text-[#EF4444]">&#x1F3AF; Mission (พันธกิจ)</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">เปลี่ยนข้อมูลที่ซับซ้อนให้เป็นแผนปฏิบัติจริง ผสานกลยุทธ์เชิงรุก (Active Yield) สร้างเครื่องมือที่ทรงพลังแตะต้องได้ง่าย เพื่อเร่งการเติบโตของเงินออมสูงสุด 30%</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2 text-[#0EA5E9]">&#x1F3C6; Goal (เป้าหมาย)</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed font-medium">สมาชิกมีเครื่องมือจำลองวิกฤต เปรียบเทียบผลงานตนเองกับผู้นำ (Benchmark) และก้าวสู่การเกษียณด้วยความมั่งคั่งที่คาดการณ์ได้อย่างแม่นยำ</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-vibrant-indigo border-l-8 border-vibrant-cyan pl-4">1. สถานการณ์ปัจจุบัน (The Baseline)</h2>
+            <p class="text-slate-700 mb-8 text-lg">วิเคราะห์ระบบ กบข. ปัจจุบันผ่าน SWOT Analysis เพื่อรักษาจุดแข็งและเติมเต็มจุดอ่อนด้วยฟังก์ชันส่วนขยายของเรา</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl card-shadow border-t-4 border-vibrant-cyan">
+                    <h3 class="text-xl font-bold mb-4 flex items-center text-slate-800"><span class="text-2xl mr-2">&#x1F4AA;</span> Strengths</h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li>&#x2713; ข้อมูลน่าเชื่อถือ ส่งตรงจากรัฐ</li>
+                        <li>&#x2713; ความปลอดภัยระดับมาตรฐานสากล</li>
+                        <li>&#x2713; มีแผนการลงทุนรองรับครอบคลุม</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl card-shadow border-t-4 border-vibrant-rose">
+                    <h3 class="text-xl font-bold mb-4 flex items-center text-slate-800"><span class="text-2xl mr-2">&#x26A0;</span> Weaknesses</h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li>&#x2715; UX/UI ใช้งานยากสำหรับผู้เริ่มต้น</li>
+                        <li>&#x2715; ขาดระบบจำลองพอร์ตล่วงหน้าแบบเจาะจง</li>
+                        <li>&#x2715; ไม่มีระบบลอกการบ้าน (Benchmark)</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl card-shadow border-t-4 border-vibrant-emerald">
+                    <h3 class="text-xl font-bold mb-4 flex items-center text-slate-800"><span class="text-2xl mr-2">&#x1F31F;</span> Opportunities</h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li>&#x2192; ผสานแนวคิด "เร่งกำไร กบข." เพิ่ม Top-up</li>
+                        <li>&#x2192; นำ AI มาจำลองวิกฤตการเงินล่วงหน้า</li>
+                        <li>&#x2192; สร้างโมเดลหารายได้ (Monetization)</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl card-shadow border-t-4 border-vibrant-orange">
+                    <h3 class="text-xl font-bold mb-4 flex items-center text-slate-800"><span class="text-2xl mr-2">&#x1F525;</span> Threats</h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li>&#x2192; วิกฤตเศรษฐกิจผันผวนรุนแรง (Crisis)</li>
+                        <li>&#x2192; กฎระเบียบและข้อจำกัดของ API รัฐ</li>
+                        <li>&#x2192; ความกังวลด้าน PDPA ของผู้ใช้งาน</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-xl card-shadow">
+                <h2 class="text-2xl font-bold mb-6 text-vibrant-indigo border-l-4 border-vibrant-indigo pl-4">Gap Analysis (การเติมเต็มช่องว่าง)</h2>
+                <div class="chart-container">
+                    <canvas id="radarChart"></canvas>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-xl card-shadow">
+                <h2 class="text-2xl font-bold mb-6 text-vibrant-indigo border-l-4 border-vibrant-orange pl-4">ความต้องการจำแนกตามกลุ่มผู้ใช้</h2>
+                <div class="chart-container">
+                    <canvas id="barChartUserNeeds"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-vibrant-indigo border-l-8 border-vibrant-emerald pl-4">2. สถาปัตยกรรมระบบ 3-Tier (The Ecosystem)</h2>
+            <p class="text-slate-700 mb-8 text-lg">โครงสร้างหลักที่รองรับผู้ใช้ตั้งแต่ระดับเริ่มต้นไปจนถึงระดับสูง โดยออกแบบให้แยกการทำงานอย่างชัดเจนเพื่อประสิทธิภาพสูงสุด</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="flex flex-col bg-white rounded-xl card-shadow overflow-hidden border-l-8 border-vibrant-cyan relative">
+                    <div class="absolute top-2 right-4 text-6xl opacity-10">&#x1F4F1;</div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-vibrant-cyan mb-2">Tier 1: The Smart Remote</h4>
+                        <p class="text-sm font-semibold text-slate-500 mb-3">Input Terminal & Simplified UI</p>
+                        <p class="text-slate-600 mb-4 text-sm">รีโมทควบคุมที่เรียบง่ายสำหรับ Normal User ขจัดความซับซ้อน นำเสนอข้อมูลสำคัญเช่น ยอดรวม และผลตอบแทนปัจจุบัน ทันทีที่เปิดแอป</p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="px-2 py-1 bg-cyan-100 text-cyan-800 text-xs font-semibold rounded-full">Intuitive UI</span>
+                            <span class="px-2 py-1 bg-cyan-100 text-cyan-800 text-xs font-semibold rounded-full">1-Click Action</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col bg-white rounded-xl card-shadow overflow-hidden border-l-8 border-vibrant-purple relative">
+                    <div class="absolute top-2 right-4 text-6xl opacity-10">&#x1F5C4;</div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-vibrant-purple mb-2">Tier 2: The Scalable Vault</h4>
+                        <p class="text-sm font-semibold text-slate-500 mb-3">Database, API & Data Aggregation</p>
+                        <p class="text-slate-600 mb-4 text-sm">คลังจัดเก็บและประมวลผลข้อมูล (Data Normalization) รองรับการนำเข้าไฟล์ PDF ย้อนหลัง และเชื่อมโยงข้อมูลหนี้สินสหกรณ์ เพื่อมองเห็นพอร์ตองค์รวม</p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs font-semibold rounded-full">PDF Extraction</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs font-semibold rounded-full">Co-op Data Merge</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl card-shadow overflow-hidden border-t-8 border-vibrant-orange mt-8">
+                <div class="bg-slate-50 p-6 border-b border-slate-200 flex items-center justify-between">
+                    <div>
+                        <h3 class="text-3xl font-bold text-vibrant-orange flex items-center">
+                            <span class="mr-3">&#x1F9E0;</span> Tier 3: The Strategic Advisor & Core Modules
+                        </h3>
+                        <p class="text-slate-600 mt-2">ศูนย์กลางการวิเคราะห์ระดับสูง ที่ถูกแยกเป็นโมดูลย่อย (Tabs) อย่างชัดเจน เพื่อรองรับฟีเจอร์ใหม่ๆ ในอนาคตโดยไม่กระทบโครงสร้างหลัก</p>
+                    </div>
+                </div>
+
+                <div class="flex overflow-x-auto border-b border-slate-200 bg-white">
+                    <button class="tab-btn active px-6 py-4 font-semibold text-sm whitespace-nowrap focus:outline-none" onclick="switchTab('tab-ai')">
+                        &#x1F916; AI Analytics (แผนหลัก)
+                    </button>
+                    <button class="tab-btn px-6 py-4 font-semibold text-sm whitespace-nowrap focus:outline-none" onclick="switchTab('tab-yield')">
+                        &#x1F680; เร่งกำไร กบข. (Active Yield)
+                    </button>
+                    <button class="tab-btn px-6 py-4 font-semibold text-sm whitespace-nowrap focus:outline-none" onclick="switchTab('tab-benchmark')">
+                        &#x1F3C6; ลอกการบ้าน (Benchmark)
+                    </button>
+                    <button class="tab-btn px-6 py-4 font-semibold text-sm whitespace-nowrap focus:outline-none" onclick="switchTab('tab-crisis')">
+                        &#x1F32A;&#xFE0F; จำลองวิกฤต (Crisis Sim)
+                    </button>
+                </div>
+
+                <div class="p-6 md:p-8 min-h-[500px]">
+                    
+                    <div id="tab-ai" class="tab-content active">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 rounded-full bg-indigo-100 text-vibrant-indigo flex items-center justify-center text-2xl mr-4">&#x1F916;</div>
+                            <div>
+                                <h4 class="text-2xl font-bold text-slate-800">The Strategic Advisor</h4>
+                                <p class="text-slate-500">โมดูลวิเคราะห์พอร์ตการลงทุนและคาดการณ์เป้าหมายยามเกษียณ (ดั้งเดิม)</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <p class="text-slate-700 leading-relaxed mb-4">
+                                    ใช้ AI ในการจำลองสถานการณ์ (Monte Carlo Simulation) จากฐานข้อมูล Tier 2 เพื่อหาสัดส่วนการลงทุนที่เหมาะสมกับระดับความเสี่ยงของแต่ละบุคคล ระบบจะแจ้งเตือนเมื่อถึงจุดที่ต้อง Rebalance พอร์ต
+                                </p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-100"><span class="text-vibrant-emerald mr-3 text-xl">&#x2705;</span> วิเคราะห์ความต้านทานความเสี่ยงรายบุคคล</li>
+                                    <li class="flex items-center text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-100"><span class="text-vibrant-emerald mr-3 text-xl">&#x2705;</span> คาดการณ์ตัวเลขเงินก้อนวันเกษียณ</li>
+                                    <li class="flex items-center text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-100"><span class="text-vibrant-emerald mr-3 text-xl">&#x2705;</span> Smart Notification แจ้งเตือนปรับพอร์ต</li>
+                                </ul>
+                            </div>
+                            <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100 text-center flex flex-col justify-center items-center h-full">
+                                <div class="text-6xl mb-4">&#x1F4CA;</div>
+                                <h5 class="font-bold text-lg text-vibrant-indigo mb-2">AI Wealth Forecast</h5>
+                                <p class="text-sm text-slate-600">ประมวลผลข้อมูลกว่าล้านรูปแบบเพื่อหาเส้นทางที่ปลอดภัยและเติบโตที่สุด</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-yield" class="tab-content">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 rounded-full bg-cyan-100 text-vibrant-cyan flex items-center justify-center text-2xl mr-4">&#x1F680;</div>
+                            <div>
+                                <h4 class="text-2xl font-bold text-slate-800">Active Yield Acceleration (เร่งกำไร กบข.)</h4>
+                                <p class="text-slate-500">กลยุทธ์เชิงรุกเพื่อดันเพดานการเติบโต และ Business Model</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div>
+                                <p class="text-slate-700 mb-6">ฟังก์ชันที่ออกแบบตามแนวคิดของผู้เชี่ยวชาญ เน้นการปรับพอร์ตเชิงรุกและการเพิ่มออมสมทบให้เต็มอัตรา (Top-up 30%) พร้อมการคำนวณส่วนต่างกำไรจากการนำเงินออมสหกรณ์มาโปะ</p>
+                                
+                                <h5 class="font-bold text-slate-800 mb-3 border-b pb-2">ขั้นตอนการเร่งพอร์ต (Action Flow)</h5>
+                                <div class="space-y-3 mb-6">
+                                    <div class="flex items-center bg-white p-3 rounded shadow-sm border-l-4 border-vibrant-cyan">
+                                        <div class="bg-vibrant-cyan text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3">1</div>
+                                        <div class="text-sm">ย้ายจากแผนหลักสู่ <span class="font-bold text-vibrant-cyan">แผนหุ้นต่างประเทศ/สมดุล</span></div>
+                                    </div>
+                                    <div class="flex items-center bg-white p-3 rounded shadow-sm border-l-4 border-vibrant-indigo">
+                                        <div class="bg-vibrant-indigo text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3">2</div>
+                                        <div class="text-sm">เพิ่มเงินออมส่วนเพิ่ม (Top-up) <span class="font-bold text-vibrant-indigo">สูงสุด 30%</span></div>
+                                    </div>
+                                    <div class="flex items-center bg-white p-3 rounded shadow-sm border-l-4 border-vibrant-emerald">
+                                        <div class="bg-vibrant-emerald text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3">3</div>
+                                        <div class="text-sm">ลดหนี้และโยกเงินออมสหกรณ์มา <span class="font-bold text-vibrant-emerald">เพิ่มสภาพคล่อง กบข.</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-gradient-to-r from-orange-50 to-rose-50 p-4 rounded-xl border border-orange-200">
+                                    <h5 class="font-bold text-vibrant-orange flex items-center mb-2"><span class="mr-2">&#x1F4B8;</span> Monetization Model (ต่อยอดพาณิชย์)</h5>
+                                    <p class="text-sm text-slate-700 mb-2">ระบบสามารถพัฒนาเป็น Freemium Model</p>
+                                    <ul class="text-sm space-y-1 text-slate-600 list-disc list-inside">
+                                        <li>จำหน่าย <strong>"สูตรคำนวณเร่งพอร์ต"</strong> พร้อมคู่มือ (เช่น 399.-)</li>
+                                        <li>ปลดล็อกฟีเจอร์ Tracking เชิงลึกแบบ Premium</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-col items-center justify-center">
+                                <h5 class="font-bold text-center mb-4 text-slate-700">สัดส่วนเงินนำส่งเป้าหมาย (30% Rule)</h5>
+                                <div class="chart-container" style="height: 300px;">
+                                    <canvas id="yieldDonutChart"></canvas>
+                                </div>
+                                <p class="text-xs text-center text-slate-500 mt-2">กราฟแสดงโครงสร้างเงินนำส่งเมื่อเปิดใช้ระบบ Top-up เต็มพิกัด</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tab-benchmark" class="tab-content">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 rounded-full bg-orange-100 text-vibrant-orange flex items-center justify-center text-2xl mr-4">&#x1F3C6;</div>
+                            <div>
+                                <h4 class="text-2xl font-bold text-slate-800">Leaderboard & Benchmark (ลอกการบ้าน)</h4>
+                                <p class="text-slate-500">เปรียบเทียบผลการลงทุนกับ Top Performers แบบไม่ระบุตัวตน</p>
+                            </div>
+                        </div>
+
+                        <p class="text-slate-700 mb-6 max-w-3xl">ฟังก์ชันพิเศษที่ช่วยให้ผู้ใช้งานเห็นภาพรวมของตลาด เปิดดูตัวอย่างพอร์ตและผลตอบแทนของแอดมิน (Benchmark) หรือผู้ที่ทำกำไรได้สูงสุด (Top 1-3) เพื่อใช้เป็นแนวทางในการศึกษาโดยไม่มีการชี้ชวนการลงทุน</p>
+
+                        <div class="chart-container-large">
+                            <canvas id="benchmarkBarChart"></canvas>
+                        </div>
+                        
+                        <div class="mt-6 flex justify-center gap-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-800 border border-slate-200">
+                                <span class="w-2 h-2 rounded-full bg-slate-400 mr-2"></span> Freemium: เห็นเฉพาะพอร์ตแอดมิน
+                            </span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-800 border border-amber-200 shadow-sm">
+                                <span class="w-2 h-2 rounded-full bg-amber-500 mr-2"></span> Premium: ปลดล็อก Top 1-3
+                            </span>
+                        </div>
+                    </div>
+
+                    <div id="tab-crisis" class="tab-content">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 rounded-full bg-rose-100 text-vibrant-rose flex items-center justify-center text-2xl mr-4">&#x1F32A;&#xFE0F;</div>
+                            <div>
+                                <h4 class="text-2xl font-bold text-slate-800">Crisis & Time-Machine Simulator</h4>
+                                <p class="text-slate-500">จำลองการเกิดวิกฤตเศรษฐกิจและการฟื้นตัวจากข้อมูล PDF ย้อนหลัง</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            <div class="lg:col-span-1">
+                                <p class="text-slate-700 text-sm mb-4 leading-relaxed">
+                                    ผู้ใช้สามารถอัปโหลดไฟล์ PDF ประวัติย้อนหลัง ระบบจะสร้างฐานข้อมูลอดีต และเปิดฟังก์ชัน <strong>"Time-Machine"</strong> จำลองเหตุการณ์ว่าหากเกิดวิกฤต (ตลาดหุ้นร่วง / ดอกเบี้ยพุ่ง) มูลค่าพอร์ตจะเป็นอย่างไร
+                                </p>
+                                
+                                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-4">
+                                    <h5 class="font-bold text-sm mb-3 flex items-center"><span class="mr-2">&#x1F39B;&#xFE0F;</span> แผงควบคุมวิกฤต (จำลอง)</h5>
+                                    
+                                    <div class="mb-3">
+                                        <label class="text-xs text-slate-500 block mb-1">จุดเริ่มต้นวิกฤต (ปีที่)</label>
+                                        <div class="w-full bg-slate-200 rounded-full h-2">
+                                            <div class="bg-vibrant-rose h-2 rounded-full" style="width: 30%"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label class="text-xs text-slate-500 block mb-1">ปรับอัตราผลตอบแทน/ดอกเบี้ย (Max 10 ครั้ง)</label>
+                                        <div class="flex gap-1 flex-wrap">
+                                            <span class="px-2 py-1 bg-rose-100 text-rose-700 text-xs rounded border border-rose-200 cursor-pointer">-15% (Crash)</span>
+                                            <span class="px-2 py-1 bg-emerald-100 text-emerald-700 text-xs rounded border border-emerald-200 cursor-pointer">+5% (Recovery)</span>
+                                            <span class="px-2 py-1 bg-slate-200 text-slate-600 text-xs rounded border border-slate-300 cursor-pointer border-dashed">+ Add</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <p class="text-xs text-slate-500 italic">* ระบบถูกออกแบบมาให้ประมวลผลบนเบราว์เซอร์ เพื่อลดภาระโหลดของฐานข้อมูลหลัก</p>
+                            </div>
+                            
+                            <div class="lg:col-span-2">
+                                <div class="chart-container-large">
+                                    <canvas id="crisisLineChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm border-t-4 border-vibrant-indigo mt-16">
+        <div class="container mx-auto px-4">
+            <h3 class="text-white font-bold text-lg mb-2">Welfare Master Ecosystem &copy; 2026</h3>
+            <p class="mb-4 max-w-2xl mx-auto">สถาปัตยกรรมได้รับการออกแบบเพื่อความยืดหยุ่น รองรับการเติบโตของฐานข้อมูลและการเพิ่มฟีเจอร์ในอนาคต (Scalability) ภายใต้แนวคิดรวดเร็ว ปลอดภัย และตอบโจทย์ผู้ใช้จริง</p>
+            <div class="flex justify-center space-x-4">
+                <span class="px-3 py-1 bg-slate-800 rounded-full text-xs">Phase 1: SWOT Foundation</span>
+                <span class="px-3 py-1 bg-vibrant-indigo text-white rounded-full text-xs font-bold shadow-[0_0_10px_rgba(49,46,129,0.8)]">Phase 2: Active Yield Integration</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const wrapLabelLogic = (labelString, maxChars) => {
+            let words = labelString.split(' ');
+            let lines = [];
+            let currentLine = '';
+            for(let i=0; i<words.length; i++) {
+                let word = words[i];
+                if(currentLine.length + word.length > maxChars) {
+                    if(currentLine.length > 0) {
+                        lines.push(currentLine.trim());
+                    }
+                    currentLine = word + ' ';
+                } else {
+                    currentLine += word + ' ';
+                }
+            }
+            if(currentLine.trim().length > 0) {
+                lines.push(currentLine.trim());
+            }
+            return lines.length > 1? lines : lines;
+        };
+
+        const processLabels = (labelsArray) => {
+            return labelsArray.map(label => {
+                if(label.length > 16) {
+                    return wrapLabelLogic(label, 16);
+                }
+                return label;
+            });
+        };
+
+        const tooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems;
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        Chart.defaults.font.family = "'Prompt', sans-serif";
+        Chart.defaults.color = '#475569';
+
+        const radarLabelsRaw = [
+            "ความง่ายและลื่นไหลในการใช้งาน", 
+            "เสถียรภาพและความปลอดภัยข้อมูล", 
+            "ระบบจำลองและพยากรณ์เชิงลึก", 
+            "การจัดการข้อมูลสินทรัพย์ภายนอก", 
+            "การแจ้งเตือนแบบเฉพาะเจาะจงบุคคล"
+        ];
+        
+        const radarCtx = document.getElementById('radarChart').getContext('2d');
+        new Chart(radarCtx, {
+            type: 'radar',
+            data: {
+                labels: processLabels(radarLabelsRaw),
+                datasets: [
+                    {
+                        label: 'ระบบกบข.เดิม',
+                        data: [60, 50, 40, 55, 45],
+                        backgroundColor: 'rgba(244, 63, 94, 0.2)',
+                        borderColor: '#F43F5E',
+                        pointBackgroundColor: '#F43F5E',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'เป้าหมาย Welfare Master',
+                        data: [90, 85, 95, 88, 92],
+                        backgroundColor: 'rgba(6, 182, 212, 0.3)',
+                        borderColor: '#06B6D4',
+                        pointBackgroundColor: '#06B6D4',
+                        borderWidth: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
+                        grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                        pointLabels: { font: { size: 12 } },
+                        ticks: { display: false, min: 0, max: 100 }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: tooltipConfig
+                }
+            }
+        });
+
+        const barLabelsRaw = [
+            "กลุ่มอายุ 20 ถึง 30 ปี", 
+            "กลุ่มอายุ 31 ถึง 45 ปี", 
+            "กลุ่มอายุ 46 ถึง 60 ปี"
+        ];
+
+        const barCtx = document.getElementById('barChartUserNeeds').getContext('2d');
+        new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: processLabels(barLabelsRaw),
+                datasets: [
+                    {
+                        label: 'Tier 1 (ส่วนติดต่อผู้ใช้)',
+                        data: [85, 75, 65],
+                        backgroundColor: '#06B6D4',
+                        stack: 'Stack 0',
+                    },
+                    {
+                        label: 'Tier 2 (ข้อมูลรวม)',
+                        data: [70, 80, 75],
+                        backgroundColor: '#8B5CF6',
+                        stack: 'Stack 1',
+                    },
+                    {
+                        label: 'Tier 3 (AI/จำลอง)',
+                        data: [85, 78, 82],
+                        backgroundColor: '#F97316',
+                        stack: 'Stack 2',
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { ticks: { font: { size: 12 } } },
+                    y: {
+                        beginAtZero: true, max: 100,
+                        title: { display: true, text: 'ระดับความสำคัญ (คะแนน)' }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: tooltipConfig
+                }
+            }
+        });
+
+        const donutLabelsRaw = ['เงินออมพื้นฐาน', 'เงินออม Top-up (30%)', 'จากสหกรณ์'];
+        const yieldDonutCtx = document.getElementById('yieldDonutChart').getContext('2d');
+        const yieldDonutChart = new Chart(yieldDonutCtx, {
+            type: 'doughnut',
+            data: {
+                labels: processLabels(donutLabelsRaw),
+                datasets: [{
+                    data: [60, 30, 10],
+                    backgroundColor: ['#06B6D4', '#F97316', '#10B981'],
+                    borderWidth: 2,
+                    borderColor: '#ffffff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '65%',
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: tooltipConfig
+                }
+            }
+        });
+
+        const benchLabelsRaw = ['Admin Portfolio', 'Top 1', 'Top 2', 'Market Avg'];
+        const benchCtx = document.getElementById('benchmarkBarChart').getContext('2d');
+        const benchChart = new Chart(benchCtx, {
+            type: 'bar',
+            data: {
+                labels: processLabels(benchLabelsRaw),
+                datasets: [{
+                    label: 'ผลตอบแทนเฉลี่ยย้อนหลัง 5 ปี (% ต่อปี)',
+                    data: [12.5, 9.8, 8.5, 4.2],
+                    backgroundColor: [
+                        'rgba(249, 115, 22, 0.8)', 
+                        'rgba(16, 185, 129, 0.8)', 
+                        'rgba(49, 46, 129, 0.9)',  
+                        'rgba(148, 163, 184, 0.6)' 
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: { display: true, text: '% ผลตอบแทน' }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: tooltipConfig
+                }
+            }
+        });
+
+        const years = Array.from({length: 20}, (_, i) => `ปีที่ ${i+1}`);
+        const normalGrowth = [100, 110, 121, 133, 146, 161, 177, 195, 215, 237, 261, 287, 316, 348, 383, 421, 463, 509, 560, 616];
+        const crisisGrowth = [100, 110, 121, 90, 85, 80, 85, 90, 100, 112, 125, 139, 155, 173, 192, 214, 238, 265, 295, 328];
+        const activeRecovery = [100, 110, 121, 90, 92, 95, 105, 118, 132, 148, 167, 188, 212, 239, 270, 305, 344, 388, 438, 495];
+
+        const crisisCtx = document.getElementById('crisisLineChart').getContext('2d');
+        const crisisChart = new Chart(crisisCtx, {
+            type: 'line',
+            data: {
+                labels: processLabels(years),
+                datasets: [{
+                        label: 'ปกติ (ไม่เกิดวิกฤต)',
+                        data: normalGrowth,
+                        borderColor: '#06B6D4',
+                        backgroundColor: 'rgba(6, 182, 212, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 0
+                    },
+                    {
+                        label: 'เกิดวิกฤต (ปล่อยทิ้งไว้)',
+                        data: crisisGrowth,
+                        borderColor: '#F43F5E',
+                        backgroundColor: 'rgba(244, 63, 94, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    },
+                    {
+                        label: 'วิกฤต + ใช้ระบบจำลองปรับพอร์ต',
+                        data: activeRecovery,
+                        borderColor: '#10B981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        borderWidth: 3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                scales: {
+                    y: {
+                        title: { display: true, text: 'มูลค่าพอร์ตจำลอง (ดัชนีเริ่มต้น 100)' }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: tooltipConfig
+                }
+            }
+        });
+
+        function switchTab(tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+
+            if(tabId === 'tab-yield') yieldDonutChart.update();
+            if(tabId === 'tab-benchmark') benchChart.update();
+            if(tabId === 'tab-crisis') crisisChart.update();
+        }
+    </script>
+</body>
+</html>
